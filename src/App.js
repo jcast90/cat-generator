@@ -10,6 +10,7 @@ class App extends Component {
     selectedCategory: ''
   }
 
+
   componentDidMount() {
     if (localStorage.getItem('catList')) {
       const catJSON = localStorage.getItem('catList')
@@ -32,7 +33,7 @@ class App extends Component {
       <div className="container">
         <h2>Cat-egory</h2>
         <CatLoader addListItem={this.addListItem} />
-        <Categories catList={this.state.catList} handleSelect={this.selectCategory} />
+        <Categories catList={this.state.catList} handleSelect={this.selectCategory} selectedCategory={this.state.selectedCategory} />
         <CatList catList={this.state.catList} selectedCategory={this.state.selectedCategory} />
       </div>
     );

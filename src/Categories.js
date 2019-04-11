@@ -2,8 +2,10 @@ import React from 'react'
 
 export class Categories extends React.Component {
   state = {
-    catList: []
+    catList: [],
   }
+  
+  category = [];
 
   componentDidMount() {
     this.setState({ catList: this.props.catList });
@@ -15,8 +17,13 @@ export class Categories extends React.Component {
     }
   }
 
-  handleClick = () => {
-    this.props.handleSelect(this.category)
+  handleClick = (event, category) => {
+    if(event.target.classList.contains('active')){
+      event.target.classList = `${event.target.classList} active`
+    }else {
+      event.target.classList = `${event.target.classList}`
+    }
+    this.props.handleSelect(this.category[category])
   }
 
   renderCatList = () => {
@@ -31,13 +38,13 @@ export class Categories extends React.Component {
 
     let entries = Object.entries(categoryTracker);
     return entries.map((category, i) => {
-      return <li key={i} onClick={this.handleClick} ref={el => this.category = category[0]}>{category[0]} : {category[1]}</li>
+      return <li key={i} className="list-group-item d-flex justify-content-between align-items-center" onClick={(e) => this.handleClick(e,category[0])} ref={el => this.category[category[0]] = [category[0],category[1]]}>{category[0]} <span className="badge badge-primary badge-pill">{category[1]}</span></li>
     })
   }
   render() {
     return (
-      <div class="row">
-        <ul class="col-md-6">{this.renderCatList()}</ul>
+      <div className="row">
+        <ul className="col-md-6 list-group">{this.renderCatList()}</ul>
       </div>
     )
   }

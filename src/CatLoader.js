@@ -37,7 +37,7 @@ export class CatLoader extends React.Component {
       <div className="row">
         <div className="col-md-6">
           <figure className="figure-img img-fluid col-md-12">
-            <img src={this.state.catUrl} className="img-thumbnail" alt="Image of a cat" />
+            <img src={this.state.catUrl} className="img-thumbnail" alt="Featured cat" />
           </figure>
           <input type='text' className="col-md-6" onChange={this.handleChange} />
           <div className="btn-group-vertical col-md-6">
