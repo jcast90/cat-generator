@@ -1,13 +1,13 @@
 {
-  "main.css": "/cat-generator/build/static/static/css/main.41e1e862.chunk.css",
-  "main.js": "/cat-generator/build/static/static/js/main.394033c2.chunk.js",
-  "main.js.map": "/cat-generator/build/static/static/js/main.394033c2.chunk.js.map",
-  "runtime~main.js": "/cat-generator/build/static/static/js/runtime~main.a147dda7.js",
-  "runtime~main.js.map": "/cat-generator/build/static/static/js/runtime~main.a147dda7.js.map",
-  "static/js/2.fa5dcf90.chunk.js": "/cat-generator/build/static/static/js/2.fa5dcf90.chunk.js",
-  "static/js/2.fa5dcf90.chunk.js.map": "/cat-generator/build/static/static/js/2.fa5dcf90.chunk.js.map",
-  "index.html": "/cat-generator/build/static/index.html",
-  "precache-manifest.910ef0eeabc715a7396ae4a8ff9bdeda.js": "/cat-generator/build/static/precache-manifest.910ef0eeabc715a7396ae4a8ff9bdeda.js",
-  "service-worker.js": "/cat-generator/build/static/service-worker.js",
-  "static/css/main.41e1e862.chunk.css.map": "/cat-generator/build/static/static/css/main.41e1e862.chunk.css.map"
+  "main.css": "/cat-generator/static/css/main.41e1e862.chunk.css",
+  "main.js": "/cat-generator/static/js/main.394033c2.chunk.js",
+  "main.js.map": "/cat-generator/static/js/main.394033c2.chunk.js.map",
+  "runtime~main.js": "/cat-generator/static/js/runtime~main.53f15572.js",
+  "runtime~main.js.map": "/cat-generator/static/js/runtime~main.53f15572.js.map",
+  "static/js/2.b955965f.chunk.js": "/cat-generator/static/js/2.b955965f.chunk.js",
+  "static/js/2.b955965f.chunk.js.map": "/cat-generator/static/js/2.b955965f.chunk.js.map",
+  "index.html": "/cat-generator/index.html",
+  "precache-manifest.ef88c4ec645e75b61e868eea82e2e4d4.js": "/cat-generator/precache-manifest.ef88c4ec645e75b61e868eea82e2e4d4.js",
+  "service-worker.js": "/cat-generator/service-worker.js",
+  "static/css/main.41e1e862.chunk.css.map": "/cat-generator/static/css/main.41e1e862.chunk.css.map"
 }
