@@ -1,50 +1,39 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const ListItem = styled.li`
+  cursor: pointer;
+  transition: .2s all ease-in-out;
+  &:hover {
+    background-color: rgba(0,0,0,.2);
+  }
+`
+const ListGroup = styled.ul`
+  padding-left: 15px;
+`
 
 export class Categories extends React.Component {
-  state = {
-    catList: [],
-  }
-  
-  category = [];
 
-  componentDidMount() {
-    this.setState({ catList: this.props.catList });
-  }
-
-  componentDidUpdate(previousProps, previousState) {
-    if (previousProps.catList !== this.props.catList) {
-      this.setState({ catList: this.props.catList });
-    }
-  }
-
-  handleClick = (event, category) => {
-    if(event.target.classList.contains('active')){
-      event.target.classList = `${event.target.classList} active`
-    }else {
-      event.target.classList = `${event.target.classList}`
-    }
-    this.props.handleSelect(this.category[category])
+  handleClick = (category) => {
+    this.props.handleSelect(category)
   }
 
   renderCatList = () => {
-    let categoryTracker = {};
-
-    this.state.catList.map((cat, index) => {
-      let category = cat.catCategory
-      categoryTracker[category]
-        ? categoryTracker[category] = categoryTracker[category] + 1
-        : categoryTracker[category] = 1;
+    return Object.keys(this.props.catList).map((category, index) => {
+      let count = this.props.catList[category].count;
+      return (
+        <ListItem key={index} className="list-group-item d-flex justify-content-between align-items-center" onClick={() => this.handleClick(category)}>
+          {category}
+          <span className="badge badge-primary badge-pill">{count}</span>
+        </ListItem>)
     })
 
-    let entries = Object.entries(categoryTracker);
-    return entries.map((category, i) => {
-      return <li key={i} className="list-group-item d-flex justify-content-between align-items-center" onClick={(e) => this.handleClick(e,category[0])} ref={el => this.category[category[0]] = [category[0],category[1]]}>{category[0]} <span className="badge badge-primary badge-pill">{category[1]}</span></li>
-    })
   }
   render() {
+
     return (
       <div className="row">
-        <ul className="col-md-6 list-group">{this.renderCatList()}</ul>
+        <ListGroup className="col-md-12 list-group">{this.renderCatList()}</ListGroup>
       </div>
     )
   }
